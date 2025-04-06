@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ICDL Training Center - IBBU</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      background-color: #f4f4f4;
+    }
+    section {
+      position: relative;
+      padding: 70px 0;
+      color: #fff;
+      text-align: center;
+    }
+    section.overlay::before {
+      content: \"\";\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      background: rgba(0, 0, 0, 0.5);\n      z-index: 1;\n    }
+    section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .overlay::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    /* Navbar */
+    .navbar {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    /* Hero Carousel */
+    .hero-carousel .carousel-item {
+      height: 80vh;
+      min-height: 400px;
+      background: no-repeat center center;
+      background-size: cover;
+      position: relative;
+    }
+    .hero-carousel .carousel-caption {
+      bottom: 220px;
+      z-index: 2;
+    }
+    .hero-carousel .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    /* Section Titles */
+    .section-title {
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    /* Card styles for Modules and Instructors */
+    .card {
+      border: none;
+      transition: transform 0.3s;
+      background: #fff;
+      color: #333;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card-title {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+    /* Testimonials */
+    .testimonial {
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+    /* Footer */
+    footer {
+      background: #343a40;
+      color: #ccc;
+      padding: 20px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">ICDL Training Center</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#modules">ICDL Modules</a></li>
+          <li class="nav-item"><a class="nav-link" href="#instructors">Instructors</a></li>
+          <li class="nav-item"><a class="nav-link" href="#history">History</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Carousel -->
+  <header id="hero" class="hero-carousel carousel slide" data-bs-ride="carousel" style="margin-top: 56px;">
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('image1.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="display-3">Welcome to the ICDL Training Center</h1>
+          <p class="lead">Empowering you with certified digital skills at IBBU University</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('pexels-gabby-k-9489396.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="display-3">Advance Your Career</h1>
+          <p class="lead">Join our comprehensive training programs and achieve ICDL certification</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </header>
+
+  <!-- About Section (Plain background for clarity) -->
+  <section id="about" style="background: #005288; color: #fff;">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <p>At our ICDL accredited training center, in partnership with IBBU University, we deliver world-class digital skills training. Our courses blend theory and practice to prepare you for the modern digital workplace.</p>
+      <p>We believe in continuous learning and adapting to emerging technologies, ensuring our students always receive current and comprehensive training.</p>
+    </div>
+  </section>
+
+  <!-- ICDL Modules Section (Background image with overlay) -->
+  <section id="modules" class="overlay" style="background: url('headway-5QgIuuBxKwM-unsplash.jpg') no-repeat center center; background-size: cover;">
+    <div class="container">
+      <h2 class="section-title">ICDL Modules</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card module-card h-100">
+            <img src="https://source.unsplash.com/400x250/?computer" class="card-img-top" alt="Computer Essentials">
+            <div class="card-body">
+              <h5 class="card-title">Computer Essentials</h5>
+              <p class="card-text">Fundamentals of computer operations, troubleshooting, and effective software use.</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#moduleModal3">View More</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card module-card h-100">
+            <img src="https://source.unsplash.com/400x250/?collaboration" class="card-img-top" alt="Online Collaboration">
+            <div class="card-body">
+              <h5 class="card-title">Online Collaboration</h5>
+              <p class="card-text">Techniques and tools for effective digital communication and remote teamwork.</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#moduleModal3">View More</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card module-card h-100">
+            <img src="https://source.unsplash.com/400x250/?cybersecurity" class="card-img-top" alt="IT Security">
+            <div class="card-body">
+              <h5 class="card-title">IT Security</h5>
+              <p class="card-text">Best practices and strategies to safeguard digital information and systems.</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#moduleModal3">View More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+       <!-- Button to view all modules -->
+       <div class="mt-4">
+        <a href="modules.html" class="btn btn-secondary btn-lg">View All Modules</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Our Instructors Section (Plain background) -->
+  <section id="instructors" style="background: #005288; color: #fff;">
+    <div class="container">
+      <h2 class="section-title">Meet Our Instructors</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card instructor-card h-100 text-center">
+            <img src="https://source.unsplash.com/400x400/?person,portrait" class="card-img-top rounded-circle mx-auto mt-3" alt="Instructor 1" style="width: 150px; height: 150px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Emily Carter</h5>
+              <p class="card-text">Expert in computer fundamentals and cybersecurity with over 15 years in digital education.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card instructor-card h-100 text-center">
+            <img src="https://source.unsplash.com/400x400/?person,profile" class="card-img-top rounded-circle mx-auto mt-3" alt="Instructor 2" style="width: 150px; height: 150px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">Mr. Jonathan Lee</h5>
+              <p class="card-text">Specialist in online collaboration and remote working strategies with practical industry insights.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card instructor-card h-100 text-center">
+            <img src="https://source.unsplash.com/400x400/?person,smile" class="card-img-top rounded-circle mx-auto mt-3" alt="Instructor 3" style="width: 150px; height: 150px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">Ms. Sophia Ramirez</h5>
+              <p class="card-text">Focused on IT security and digital ethics, combining academic rigor with real-world experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Section (Background image with overlay) -->
+  <section id="history" class="overlay" style="background: url('https://source.unsplash.com/1920x1080/?history,education') no-repeat center center; background-size: cover;">
+    <div class="container">
+      <h2 class="section-title">Our History</h2>
+      <p>From humble beginnings to a state-of-the-art facility, our training center has grown into a beacon of digital excellence. In collaboration with IBBU University, we have continually evolved our curriculum to meet industry demands, ensuring our students remain at the forefront of digital innovation.</p>
+      <p>Our legacy is built on a commitment to quality education, continuous improvement, and the success of every student who walks through our doors.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials Section (Plain background) -->
+  <section id="testimonials" style="background: #005288; color: #fff;">
+    <div class="container">
+      <h2 class="section-title">Testimonials</h2>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex justify-content-center">
+              <div class="col-md-8 testimonial">
+                <p>“This training center has transformed my career. The expert guidance and practical approach were exactly what I needed in today’s digital world.”</p>
+                <h6 class="text-end">- John Doe</h6>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <div class="col-md-8 testimonial">
+                <p>“A game-changer for digital education. The courses are well-structured and the instructors are truly inspiring.”</p>
+                <h6 class="text-end">- Jane Smith</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (Plain background with soft contrast) -->
+  <section id="contact" style="background: #333; color: #fff;">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form>
+            <div class="mb-3 text-start">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Enter your name" required />
+            </div>
+            <div class="mb-3 text-start">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" id="email" class="form-control" placeholder="Enter your email" required />
+            </div>
+            <div class="mb-3 text-start">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea id="message" class="form-control" rows="5" placeholder="Type your message" required></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 ICDL Training Center, IBBU University. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper and Custom JS for smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a.nav-link').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
