@@ -46,7 +46,7 @@
     </header>
 
     <!-- About Section (Plain background for clarity) -->
-    <section id="about"
+    {{-- <section id="about"
         style="background: linear-gradient(135deg, rgba(0, 128, 140,.9), rgba(34, 139, 34, 0.8)); color: #fff; padding: 60px 0;">
         <div class="container">
             <h2 class="section-title text-center text-white">About ICDL</h2>
@@ -57,6 +57,33 @@
             <p class="text-center">We believe in continuous learning and adapting to emerging technologies, ensuring our
                 students always receive
                 current and comprehensive training.</p>
+        </div>
+    </section> --}}
+
+     <!-- Counter Section -->
+     <section id="counter" style="background: linear-gradient(135deg, rgba(0, 128, 140, 0.9), rgba(34, 139, 34, 0.8)); color: #fff; padding: 60px 0;">
+        <div class="container text-center">
+            <h2 class="section-title text-white">Our Achievements</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="counter-box">
+                        <h3 class="display-4 fw-bold">5000</h3>
+                        <p class="lead">Students Enrolled</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="counter-box">
+                        <h3 class="display-4 fw-bold">50</h3>
+                        <p class="lead">Courses Offered</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="counter-box">
+                        <h3 class="display-4 fw-bold">4</h3>
+                        <p class="lead">Modules Available</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -214,8 +241,10 @@
         </div>
     </section>
 
+   
+
     <!-- History Section (Background image with overlay) -->
-    <section id="history" class="overlay"
+    {{-- <section id="history" class="overlay"
         style="background: url('assets/images/ibbu-1-1.jpg') no-repeat center center; background-size: cover;">
         <div class="container">
             <h2 class="section-title text-white">About US</h2>
@@ -225,7 +254,7 @@
             <p>Our legacy is built on a commitment to quality education, continuous improvement, and the success of every
                 student who walks through our doors.</p>
         </div>
-    </section>
+    </section> --}}
 
     @php
         $testimonial_assets = [
@@ -347,6 +376,43 @@
 @endsection
 
 @push('page_scripts')
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counters = entry.target.querySelectorAll('.counter-box h3');
+                counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / 200;
+
+                    if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 10);
+                    } else {
+                    counter.innerText = target;
+                    }
+                };
+
+                if (!counter.getAttribute('data-counted')) {
+                    counter.setAttribute('data-target', counter.innerText);
+                    counter.innerText = '0';
+                    counter.setAttribute('data-counted', 'true');
+                    updateCount();
+                }
+                });
+                observer.unobserve(entry.target);
+            }
+            });
+        }, { threshold: 0.5 });
+        const counterSection = document.querySelector('#counter');
+        observer.observe(counterSection);
+       
+    });
+</script>
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a.nav-link').forEach(anchor => {
@@ -359,6 +425,8 @@
                 });
             });
         });
+
+             
 
         
         
