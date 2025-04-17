@@ -22,7 +22,7 @@
 
 @stop
 @section('page_title_buttons')
-   
+
 @stop
 
 
@@ -39,7 +39,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12 d-flex gap-2 justify-content-end mb-4">
-                  
+
                     <a id="btn-new-mdl-icdlModule-modal" class="btn btn-sm btn-primary btn-new-mdl-icdlModule-modal">
                         <i class="fas fa-plus-square me-1"></i>New ICDL SubModule
                     </a>
@@ -53,39 +53,72 @@
                     </a> --}}
 
                 </div>
-             
+
             </div>
 
             @include('pages.icdl_modules.modal')
             @include('pages.icdl_modules.show_fields')
             @php
                 $subModules = $icdlModule->subModules;
+                $resources = $icdlModule->resources;
             @endphp
+            <div class="row">
+                <div class="col-sm-12 mb-3">
+                    @include('pages.icdl_modules.partials.module_resource')
+
+                </div>
+            </div>
+            @if (count($resources))
+                @foreach ($resources as $resource)
+                    <div>
+                       <p class="h3"> Module Resources </p> 
+                    </div>
+                    <div class="alert alert-success">
+                        <li class="d-inline-flex align-items-center"> 
+                            <div class="d-flex align-items-center gap-2">
+                                <a href="{{ asset($resource->file_path) }}" style="text-decoration: underline"
+                                    download>{{ $resource->resource_name }}</a>
+                                <a href="#" class="text-danger btn-delete-mdl-icdlModuleResource-modal"
+                                    data-val="{{ $resource->id }}" data-toggle="tooltip" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </div>
+                @endforeach
+            @else
+                <div class="alert alert-info">
+                    <strong>Info!</strong> No resources available for this module.
+                </div>
+            @endif
             @if (count($subModules))
-                
             <div>
-                <ul>
-                    <li><strong>Sub Modules:</strong></li>
+                <div>
+                    <p class="h3"> Sub Modules </p> 
+                 </div>
+             
                     <ul>
                         @foreach ($subModules as $subModule)
-                            <li> 
+                            <li>
                                 <div class="d-flex align-items-center gap-2">
                                     <span>{{ $subModule->name }}</span>
-                                    <a href="{{ route('icdl_modules.show', $subModule->id) }}" class="text-primary" data-toggle="tooltip" title="View">
+                                    <a href="{{ route('icdl_modules.show', $subModule->id) }}" class="text-primary"
+                                        data-toggle="tooltip" title="View">
                                         <i class="fas fa-eye"></i>
                                     </a>
-                                    <a href="#" class="text-secondary btn-edit-mdl-icdlModule-modal" data-val="{{$subModule->id}}" data-toggle="tooltip" title="Edit">
+                                    <a href="#" class="text-secondary btn-edit-mdl-icdlModule-modal"
+                                        data-val="{{ $subModule->id }}" data-toggle="tooltip" title="Edit">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="#" class="text-danger btn-delete-mdl-icdlModule-modal" data-val="{{$subModule->id}}" data-toggle="tooltip" title="Delete">
+                                    <a href="#" class="text-danger btn-delete-mdl-icdlModule-modal"
+                                        data-val="{{ $subModule->id }}" data-toggle="tooltip" title="Delete">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </div>
                             </li>
-                         
                         @endforeach
                     </ul>
-                </ul>
+              
             </div>
             @endif
 

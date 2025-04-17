@@ -23,7 +23,22 @@ Route::post('contact-us', [App\Http\Controllers\Frontend\FrontendController::cla
 Route::get('module/{id}', [App\Http\Controllers\Frontend\FrontendController::class, 'showModuleDetails'])->name('module.details');
 Route::post('module/apply', [App\Http\Controllers\Frontend\FrontendController::class, 'applyModule'])->name('module.apply');
 
+Route::get('history', function(){
+    return view('frontend.history');
+})->name('history');
 
+
+Route::get('mandate', function(){
+    return view('frontend.mandate');
+})->name('mandate');
+
+Route::get('cooperate-statement', function(){
+    return view('frontend.cooperate-statement');
+})->name('cooperate-statement');
+
+Route::get('organizational-structure', function(){
+    return view('frontend.organogram');
+})->name('organizational-structure');
 
 
 
@@ -42,6 +57,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/update-password/{id}', [App\Http\Controllers\HomeController::class, 'updatePassword'])->name('updatePassword');
     
     Route::resource('icdl_modules', \App\Http\Controllers\Models\ICDLModuleController::class);
+
+    Route::post('icdl_module/resources', [\App\Http\Controllers\Models\ICDLModuleController::class, 'uploadResource'])->name('icdl_module.resources.store');
+
+    Route::delete('icdl_module/resources/{id}', [\App\Http\Controllers\Models\ICDLModuleController::class, 'deleteResource'])->name('icdl_module.resources.destroy');
     
     Route::resource('icdl_applications', \App\Http\Controllers\Models\ICDLApplicationController::class);
 

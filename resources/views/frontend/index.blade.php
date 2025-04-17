@@ -2,9 +2,9 @@
 
 @section('content')
     <!-- Hero Carousel -->
-    <header id="hero" class="hero-carousel carousel slide" data-bs-ride="carousel" style="margin-top: 56px;">
+    <header id="hero" class="hero-carousel carousel slide" data-bs-ride="carousel" style="margin-top: 1px;">
         <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url('assets/images/image1.jpg');">
+            <div class="carousel-item active" style="background-image: url('assets/images/LE_1.jpg');">
                 <div class="hero-overlay"></div>
                 <div class="carousel-caption d-none d-md-block">
                     <h1 class="display-3">Welcome to the ICDL Training Center</h1>
@@ -16,7 +16,7 @@
 
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('assets/images/pexels-gabby-k-9489396.jpg');">
+            <div class="carousel-item" style="background-image: url('assets/images/LE_2.jpg');">
                 <div class="hero-overlay"></div>
                 <div class="carousel-caption d-none d-md-block">
                     <h1 class="display-3">Advance Your Career</h1>
@@ -26,7 +26,7 @@
                     <a href="#contact" class="btn btn-lg mt-3 btn-gradient-primary">Get Started</a>
                 </div>
             </div>
-        <div class="carousel-item" style="background-image: url('assets/images/pexels-pavel-danilyuk-8761329.jpg');">
+        <div class="carousel-item" style="background-image: url('assets/images/LE_3.jpg');">
             <div class="hero-overlay"></div>
             <div class="carousel-caption d-none d-md-block">
                 <h1 class="display-3">Learn at Your Own Pace</h1>
@@ -49,10 +49,11 @@
     <section id="about"
         style="background: linear-gradient(135deg, rgba(0, 128, 140,.9), rgba(34, 139, 34, 0.8)); color: #fff; padding: 60px 0;">
         <div class="container">
-            <h2 class="section-title text-center text-white">About Us</h2>
-            <p class="text-center">At our ICDL accredited training center, in partnership with IBBU University, we deliver
-                world-class digital
-                skills training. Our courses blend theory and practice to prepare you for the modern digital workplace.</p>
+            <h2 class="section-title text-center text-white">About ICDL</h2>
+            <p class="text-center">ICDL Foundation, a global influencer in digital literacy, has empowered over 17 million individuals worldwide through its flexible ‘Digital Skills Standard’ certification, bridging the digital divide and ensuring proficiency in the modern, technology-driven landscape.
+                At its core, ICDL Foundation is a global force driving digital literacy and proficiency. Our mission is to enable proficient use of Information and Communication Technology (ICT) that empowers individuals, organisations and society, through the development, promotion, and delivery of quality certification programmes throughout the world. As a pivotal player in the digital skills landscape, ICDL Foundation is committed to bridging the digital divide and ensuring that individuals are well-equipped for the demands of the modern, technology-driven world.
+                
+                As a non-profit social enterprise, ICDL benefits from the unique support of experts from national computer societies and partners worldwide to develop vendor-independent standards that define the skills and knowledge required to use digital technology effectively. We work with education and training partners, local and regional authorities, national governments, international development organisations as well as public and private sector employers in all sectors, in the delivery of our.</p>
             <p class="text-center">We believe in continuous learning and adapting to emerging technologies, ensuring our
                 students always receive
                 current and comprehensive training.</p>
@@ -296,6 +297,25 @@
         <div class="container">
             <h2 class="section-title text-white">Contact Us</h2>
             <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div id="map" style="height: 400px; width: 100%;"></div>
+                    <script>
+                        function initMap() {
+                            const location = { lat: 9.615, lng: 6.556 }; // Replace with your desired coordinates
+                            const map = new google.maps.Map(document.getElementById("map"), {
+                                zoom: 15,
+                                center: location,
+                            });
+                            const marker = new google.maps.Marker({
+                                position: location,
+                                map: map,
+                            });
+                        }
+                    </script>
+                    <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_demoKeyForTesting&callback=initMap">
+                    </script>
+                </div>
                 <div class="col-md-8">
                     <form>
                         <div id="div-contact-modal-error" class="alert alert-danger" role="alert"></div>

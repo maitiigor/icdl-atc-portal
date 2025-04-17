@@ -21,6 +21,7 @@ use Flash;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Models\ICDLModuleResource;
 
 
 class ICDLModuleController extends BaseController
@@ -175,6 +176,42 @@ class ICDLModuleController extends BaseController
 
         ICDLModuleDeleted::dispatch($icdlModule);
         return redirect(route('icdl_modules.index'));
+    }
+
+
+    public function uploadResource(Request $request){
+
+        $request->validate([
+            'icdl_module_id' => 'required|exists:icdl_modules,id',
+            'resource_name' => 'required|string|max:255',
+            'resource_file' => 'required|file|mimes:pdf,doc,docx,ppt,pptx,xls,xlsx,jpg,jpeg,png|max:2048',
+        ]);
+
+        $icdlModule = ICDLModule::find($request->icdl_module_id);
+
+        if ($request->hasFile('resource_file')) {
+            $file = $request->file('resource_file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploads'), $filename);
+            $icdlModule->resources()->create([
+                'resource_name' => $request->resource_name,
+                'file_path' => 'uploads/' . $filename,
+            ]);
+        }
+
+        return $this->sendSuccess('Resource uploaded successfully');
+    }
+
+    public function deleteResource($id)
+    {
+        $resource = ICDLModuleResource::find($id);
+
+        if ($resource) {
+            $resource->delete();
+            return $this->sendSuccess('Resource deleted successfully');
+        }
+
+        return $this->sendError('Resource not found');
     }
 
     

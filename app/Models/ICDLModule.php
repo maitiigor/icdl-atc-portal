@@ -84,6 +84,16 @@ class ICDLModule extends Model
         return $this->hasMany(ICDLApplication::class, 'icdl_module_id', 'id');
     }
 
+    /**
+     * Get all of the resources for the ICDLModule
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function resources(): HasMany
+    {
+        return $this->hasMany(ICDLModuleResource::class, 'icdl_module_id', 'id');
+    }
+
     
 
 }

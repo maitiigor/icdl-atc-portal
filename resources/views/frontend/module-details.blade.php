@@ -23,6 +23,30 @@
                 </div>
             </div>
         </div>
+        @php
+            $resources = $icdl_module->resources;
+        @endphp
+        @if($resources->count())
+            <div class="row">
+                <div class="col-sm-12 mb-3">
+                    <p class="h3 section-title "> Module Resources </p>
+                    <div class="">
+                        <ul>
+                            @foreach ($resources as $resource)
+                                <li class="d-inline-flex">
+                                    <div class="d-flex gap-2">
+                                        <a href="{{ asset($resource->file_path) }}" style="text-decoration: underline"
+                                            download>{{ $resource->resource_name }}</a>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        <div></div>
         <div class="row mt-4">
             <div class="col text-center">
                 <!-- Apply Now Button triggers modal -->
