@@ -23,10 +23,18 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="{{route('home')}}#hero">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{route('home')}}#modules">ICDL Modules</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{route('home')}}#instructors">Instructors</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{route('home')}}#history">History</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{route('home')}}#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{route('modules')}}#modules">ICDL Modules</a></li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="About" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About Us
+            </a>
+              <ul class="dropdown-menu" aria-labelledby="About">
+                <li><a class="dropdown-item" href="{{route('history')}}">History</a></li>
+                <li><a class="dropdown-item" href="{{route('mandate')}}">Mandate</a></li>
+                <li><a class="dropdown-item" href="{{route('cooperate-statement')}}">Coperate Statement</a></li>
+                <li><a class="dropdown-item" href="{{route('organizational-structure')}}">Organizational Structure</a></li>
+              </ul>
+            </li>
           <li class="nav-item"><a class="nav-link" href="{{route('home')}}#contact">Contact Us</a></li>
         </ul>
       </div>
