@@ -26,14 +26,15 @@
                     <a href="#contact" class="btn btn-lg mt-3 btn-gradient-primary">Get Started</a>
                 </div>
             </div>
-        <div class="carousel-item" style="background-image: url('assets/images/LE_3.jpg');">
-            <div class="hero-overlay"></div>
-            <div class="carousel-caption d-none d-md-block">
-                <h1 class="display-3">Learn at Your Own Pace</h1>
-                <p class="lead">Our flexible learning options allow you to balance your studies with your personal and professional life. Start your journey to digital proficiency today.</p>
-                <a href="#modules" class="btn btn-lg mt-3 btn-gradient-primary">Explore Modules</a>
+            <div class="carousel-item" style="background-image: url('assets/images/LE_3.jpg');">
+                <div class="hero-overlay"></div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="display-3">Learn at Your Own Pace</h1>
+                    <p class="lead">Our flexible learning options allow you to balance your studies with your personal and
+                        professional life. Start your journey to digital proficiency today.</p>
+                    <a href="#modules" class="btn btn-lg mt-3 btn-gradient-primary">Explore Modules</a>
+                </div>
             </div>
-        </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
@@ -60,43 +61,59 @@
         </div>
     </section> --}}
 
-     <!-- Counter Section -->
-     <section id="counter" style="background: linear-gradient(135deg, rgba(0, 128, 140, 0.9), rgba(34, 139, 34, 0.8)); color: #fff; padding: 60px 0;">
-        <div class="container text-center">
-            <h2 class="section-title text-white">Our Achievements</h2>
+    <!-- ICDL Modules Section-->
+    <section id="modules" class=""
+        style="background: ;">
+        <div class="">
+            <h2 class="section-title" style="color: #009ede;">ICDL Programmes</h2>
             <div class="row g-4 justify-content-center">
-                <div class="col-md-4">
-                    <div class="counter-box">
-                        <h3 class="display-4 fw-bold">5000</h3>
-                        <p class="lead">Students Enrolled</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="counter-box">
-                        <h3 class="display-4 fw-bold">50</h3>
-                        <p class="lead">Courses Offered</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="counter-box">
-                        <h3 class="display-4 fw-bold">4</h3>
-                        <p class="lead">Modules Available</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="row mx-0 shadow">
 
-    <!-- ICDL Modules Section (Background image with overlay) -->
-    <section id="modules" class="overlay"
-        style="background: url('assets/images/pexels-mart-production-8472864.jpg') no-repeat center center; background-size: cover;">
-        <div class="container">
-            <h2 class="section-title text-white">ICDL Modules</h2>
-            <div class="row g-4 justify-content-center">
-                @foreach ($icdl_modules as $icdl_module)
+                  
+
+
+                    @foreach ($icdl_modules as $idx => $icdl_module)
+                       
+                        
+                        <a class="item col workforce text-center p-4 text-decoration-none position-relative text-white" 
+                            href="{{ route('module.details', $icdl_module->id) }}" title="ICDL CORE" style="background-color: {{$icdl_module->color}};">
+                            <div class="inner mx-auto">
+                                <h3 class="hh-1 title"><span class="d-block">{{$icdl_module->name}}</h3>
+                                <span class="excerpt">{{$icdl_module->short_description}}</span>
+                            </div>
+                        </a>
+                    @endforeach
+                    {{-- <a class="item col professional text-center p-4 text-decoration-none position-relative text-white"
+                        href="https://icdl.org/professional/icdl-professional/" title="ICDL PROFESSIONAL" style="background-color: #003c71">
+                        <div class="inner mx-auto">
+                            <h3 class="hh-1 title"><span class="d-block">ICDL</span> PROFESSIONAL</h3>
+                            <span class="excerpt">Professional digital skills for occupational effectiveness</span>
+                        </div>
+                    </a>
+                    <a class="item col digital-student text-center p-4 text-decoration-none position-relative text-white" style="background-color: #78bd20"
+                        href="https://icdl.org/digital-student/icdl-digital-student/" title="ICDL DIGITAL STUDENT">
+                        <div class="inner mx-auto">
+                            <h3 class="hh-1 title"><span class="d-block">ICDL</span> DIGITAL STUDENT</h3>
+                            <span class="excerpt">Digital skills to design and develop, share and protect</span>
+                        </div>
+                    </a>
+                    <a class="item col digital-citizen text-center p-4 text-decoration-none position-relative text-white" style="background-color: #ae1684"
+                        href="https://icdl.org/digital-citizen/icdl-digital-citizen/" title="ICDL DIGITAL CITIZEN">
+                        <div class="inner mx-auto">
+                            <h3 class="hh-1 title"><span class="d-block">ICDL</span> DIGITAL CITIZEN</h3>
+                            <span class="excerpt">Digital skills to access, engage and build computer confidence</span>
+                        </div>
+                    </a> --}}
+    
+
+
+
+                </div>
+                {{-- @foreach ($icdl_modules as $icdl_module)
                     <div class="col-md-3">
                         <div class="card module-card h-100">
-                            <img src="{{ asset($icdl_module->image) }}" class="card-img-top" alt="{{ $icdl_module->name }}" style="height: 250px; object-fit: fill;">
+                            <img src="{{ asset($icdl_module->image) }}" class="card-img-top" alt="{{ $icdl_module->name }}"
+                                style="height: 250px; object-fit: fill;">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $icdl_module->name }}</h5>
                                 <p class="card-text">{{ $icdl_module->short_description }}</p>
@@ -107,7 +124,7 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @endforeach --}}
                 {{-- <div class="col-md-4">
                     <div class="card module-card h-100">
                         <img src="https://source.unsplash.com/400x250/?computer" class="card-img-top"
@@ -155,6 +172,35 @@
         </div>
     </section>
 
+    {{-- End ICDL Module Section --}}
+    <!-- Counter Section -->
+    <section id="counter"
+        style="background: linear-gradient(135deg, rgba(3, 158, 222, 0.9), rgba(3, 158, 222, 0.8)); color: #fff; padding: 60px 0;">
+        <div class="container text-center">
+            <h2 class="section-title text-white">Our Achievements</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="counter-box">
+                        <h3 class="display-4 fw-bold">5000+</h3>
+                        <p class="lead">Students Enrolled</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="counter-box">
+                        <h3 class="display-4 fw-bold">50+</h3>
+                        <p class="lead">Courses Offered</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="counter-box">
+                        <h3 class="display-4 fw-bold">4</h3>
+                        <p class="lead">Modules Available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     @php
         $instructors = [
             [
@@ -183,7 +229,7 @@
 
     <!-- Meet Our Instructors Section (Plain background) -->
     <section id="instructors"
-        style="background: linear-gradient(135deg, rgba(0, 128, 140,.9), rgba(34, 139, 34, 0.8)); color: #fff; padding: 60px 0;">
+        style="background: linear-gradient(135deg, rgba(3, 119, 169, 0.9), rgba(3, 158, 222, 0.8));  color: #fff; padding: 60px 0;">
         <div class="container">
             <h2 class="section-title text-white">Meet Our Instructors</h2>
             <div class="row g-4 justify-content-center">
@@ -241,7 +287,7 @@
         </div>
     </section>
 
-   
+
 
     <!-- History Section (Background image with overlay) -->
     {{-- <section id="history" class="overlay"
@@ -267,7 +313,7 @@
 
     <!-- Testimonials Section (Plain background) -->
     <section id="testimonials"
-        style="background: linear-gradient(135deg, rgba(0, 128, 140,.9), rgba(34, 139, 34, 0.8)); color: #fff; padding: 60px 0;">
+        style="background: linear-gradient(135deg, rgba(3, 158, 222, 0.9), rgba(3, 158, 222, 0.8));  color: #fff; padding: 60px 0;">
         <div class="container">
             <h2 class="section-title text-white">Testimonials</h2>
             <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -321,8 +367,7 @@
     </section>
 
     <!-- Contact Section (Plain background with soft contrast) -->
-    <section id="contact"
-        style="background: linear-gradient(135deg, rgba(5, 54, 71, 0.9), rgba(9, 10, 10, 0.9)); color: #f0f0f0;">
+    <section id="contact" style="background:  rgba(8, 8, 8, 0.9); color: #ffffff;">
         <div class="container">
             <h2 class="section-title text-white">Contact Us</h2>
             <div class="row justify-content-center">
@@ -330,7 +375,10 @@
                     <div id="map" style="height: 400px; width: 100%;"></div>
                     <script>
                         function initMap() {
-                            const location = { lat: 9.615, lng: 6.556 }; // Replace with your desired coordinates
+                            const location = {
+                                lat: 9.615,
+                                lng: 6.556
+                            }; // Replace with your desired coordinates
                             const map = new google.maps.Map(document.getElementById("map"), {
                                 zoom: 15,
                                 center: location,
@@ -341,34 +389,22 @@
                             });
                         }
                     </script>
-                    <script async defer
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_demoKeyForTesting&callback=initMap">
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_demoKeyForTesting&callback=initMap">
                     </script>
                 </div>
                 <div class="col-md-8">
-                    <form>
-                        <div id="div-contact-modal-error" class="alert alert-danger" role="alert"></div>
-                        @csrf
-                        <div class="mb-3 text-start">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name"
-                                required />
-                        </div>
-                        <div class="mb-3 text-start">
-                            <label for="email" class="form-label">Your Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email"
-                                required />
-                        </div>
-                        <div class="mb-3 text-start">
-                            <label for="message" class="form-label">Your Message</label>
-                            <textarea id="message" class="form-control" rows="5" placeholder="Type your message" required></textarea>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" id="submitContact"
-                                class="btn btn-primary btn-gradient-primary btn-lg">Send
-                                Message</button>
-                        </div>
-                    </form>
+                    <h3 class="text-info">Address</h3>
+
+                    <p> <i class="fas fa-map-marker-alt text-danger"></i> Minna Road, Lapai 911101, Niger</p>
+
+                    <h3 class="text-info">Open Hours</h3>
+
+                    <p><i class="fas fa-clock text-danger"></i> Monday - Friday: 9:00 AM - 5:00 PM</p>
+                    <p>Saturday: 10:00 AM - 2:00 PM</p>
+                    <p>Sunday: Closed</p>
+
+                    <h3 class="text-info">Support Email</h3>
+                    <p><a href="mailto:info@example.com" class="text-light">info@ibbu.edu.ng</a></p>
                 </div>
             </div>
         </div>
@@ -376,132 +412,60 @@
 @endsection
 
 @push('page_scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counters = entry.target.querySelectorAll('.counter-box h3');
+                        counters.forEach(counter => {
+                            const updateCount = () => {
+                                const target = +counter.getAttribute('data-target');
+                                const count = +counter.innerText.replace('+', '');
+                                const increment = target / 200;
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counters = entry.target.querySelectorAll('.counter-box h3');
-                counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText;
-                    const increment = target / 200;
+                                if (count < target) {
+                                    counter.innerText = Math.ceil(count + increment);
+                                    setTimeout(updateCount, 10);
+                                } else {
+                                    counter.innerText = counter.getAttribute(
+                                            'data-has-plus') === 'true' ? target + '+' :
+                                        target;
+                                }
+                            };
 
-                    if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCount, 10);
-                    } else {
-                    counter.innerText = target;
+                            if (!counter.getAttribute('data-counted')) {
+                                const hasPlus = counter.innerText.includes('+');
+                                counter.setAttribute('data-target', counter.innerText
+                                    .replace('+', ''));
+                                counter.innerText = '0';
+                                counter.setAttribute('data-counted', 'true');
+                                counter.setAttribute('data-has-plus', hasPlus);
+                                updateCount();
+                            }
+                        });
+                        observer.unobserve(entry.target);
                     }
-                };
-
-                if (!counter.getAttribute('data-counted')) {
-                    counter.setAttribute('data-target', counter.innerText);
-                    counter.innerText = '0';
-                    counter.setAttribute('data-counted', 'true');
-                    updateCount();
-                }
                 });
-                observer.unobserve(entry.target);
-            }
+            }, {
+                threshold: 0.5
             });
-        }, { threshold: 0.5 });
-        const counterSection = document.querySelector('#counter');
-        observer.observe(counterSection);
-       
-    });
-</script>
+            const counterSection = document.querySelector('#counter');
+            observer.observe(counterSection);
+        });
+    </script>
+    </script>
     <script>
         // Smooth scrolling for navigation links
-        document.querySelectorAll('a.nav-link').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').replace(location.origin, '');
+        // document.querySelectorAll('a.nav-link').forEach(anchor => {
+        //     anchor.addEventListener('click', function(e) {
+        //         e.preventDefault();
+        //         const targetId = this.getAttribute('href').replace(location.origin, '');
 
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-             
-
-        
-        
-        $(document).ready(function() {
-            $('#div-contact-modal-error').hide();
-
-            $('#submitContact').on('click', function(e) {
-                e.preventDefault();
-                // Here you can add your form submission logic
-                let endPointUrl = "{{ route('contact-us') }}";
-
-                let formData = new FormData();
-                formData.append('_token', $('input[name="_token"]').val());
-                formData.append('_method', 'POST');
-
-                $('#div-contact-modal-error').html('');
-
-                formData.append('name', $('#name').val());
-                formData.append('email', $('#email').val());
-                formData.append('message', $('#message').val());
-             
-
-                $.ajax({
-                    url: endPointUrl,
-                    type: "POST",
-                    data: formData,
-                    cache: false,
-                    processData: false,
-                    contentType: false,
-                    dataType: 'json',
-                    success: function(result) {
-                        if (result.errors) {
-                            console.log(result.errors)
-                            result.errors.forEach(function(error) {
-                                $('#div-contact-modal-error').append(
-                                    '<li>' + error + '</li>');
-                            });
-                            $('#div-contact-modal-error').show('');
-                            // Swal.fire("Error",
-                            //     "Oops an error occurred. Please try again.",
-                            //     "error");
-                        } else {
-                            $('#div-contact-modal-error').hide('');
-                            Swal.fire({
-                                title: "Submitted",
-                                text: "Your Message was sent successfully.",
-                                icon: "success",
-                                confirmButtonClass: "btn-success",
-                                confirmButtonText: "OK",
-                                closeOnConfirm: false
-                            }).then((result) => {
-                                location.reload(true);
-                            });
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.log(xhr.responseText);
-                        console.log(xhr);
-
-                        if (xhr.status == 422) {
-                            let errors = xhr.responseJSON.errors;
-                            $.each(errors, function(key, value) {
-                                $('#div-contact-modal-error').append(
-                                    '<li>' + value[0] + '</li>');
-                            });
-                        } else {
-                            $('#div-contact-modal-error').append(
-                                '<li>Oops an error occurred. Please try again.</li>');
-                        }
-                        $('#div-contact-modal-error').show('');
-
-                    }
-                });
-            });
-
-        })
+        //         document.querySelector(targetId).scrollIntoView({
+        //             behavior: 'smooth'
+        //         });
+        //     });
+        // });
     </script>
 @endpush

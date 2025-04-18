@@ -46,6 +46,7 @@ class ICDLModule extends Model
         'short_description',
         'full_description',
         'amount',
+        'color',
         'is_available'
     ];
 
@@ -59,6 +60,7 @@ class ICDLModule extends Model
         'short_description' => 'string',
         'full_description' => 'string',
         'image' => 'string',
+        'color' => 'string',
         'amount' => 'float',
         'is_available' => 'boolean',
     ];

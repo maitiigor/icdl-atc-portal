@@ -195,6 +195,7 @@
                     '');
                     $('#is_available').prop('checked', response.data.is_available == 1 ? true :
                         false);
+                    $('#color').val(response.data.color);
                     $('#parent_id').val(response.data.parent_id);
 
                     if (response.data.image != null) {
@@ -338,6 +339,10 @@
 
                 if ($('#short_description').length) {
                     formData.append('short_description', $('#short_description').val());
+                }
+
+                if ($('#color').length) {
+                    formData.append('color', $('#color').val());
                 }
 
                 if (tinymce.get('full_description').getContent().length) {

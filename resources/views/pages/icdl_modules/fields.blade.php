@@ -66,6 +66,15 @@
             </div>
         </div>
 
+        <div id="div-color" class="form-group">
+            <label for="image" class="col-lg-12 col-form-label">Module Color</label>
+            <div class="col-lg-12">
+                <input type="color" name="image_file" id="color" class="form-contol">
+            </div>
+        </div>
+
+
+
         <div id="div-image_file_preview">
             <div class="col-lg-12 d-flex justify-center">
                 <img id="image_file_preview" src="" alt="Image Preview" style="max-width: 100%; height: 400px;">

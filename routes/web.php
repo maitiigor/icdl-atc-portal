@@ -40,6 +40,10 @@ Route::get('organizational-structure', function(){
     return view('frontend.organogram');
 })->name('organizational-structure');
 
+Route::get('contact-us', function(){
+    return view('frontend.contact-us');
+})->name('show.contact-us');
+
 
 
 Route::get('app/migrate', function () {

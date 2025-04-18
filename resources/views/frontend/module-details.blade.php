@@ -25,8 +25,9 @@
         </div>
         @php
             $resources = $icdl_module->resources;
+            $subModules = $icdl_module->subModules;
         @endphp
-        @if($resources->count())
+        @if ($resources->count())
             <div class="row">
                 <div class="col-sm-12 mb-3">
                     <p class="h3 section-title "> Module Resources </p>
@@ -46,7 +47,26 @@
             </div>
         @endif
 
-        <div></div>
+        <!-- Other Modules Section -->
+        @if (count($subModules) > 0)
+            <section class="container">
+                <h2 class="section-title">Sub Modules</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4 other-modules">
+                    <div class="col-sm-12">
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            @foreach ($subModules as $subModule)
+                                <li class="mb-2 d-flex align-items-center">
+                                    <span class="me-2">➤</span>
+                                    <a href="{{ route('module.details', $subModule->id) }}" class="btn btn-link p-0" style="text-decoration: none;">
+                                        {{ $subModule->name }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        @endif
         <div class="row mt-4">
             <div class="col text-center">
                 <!-- Apply Now Button triggers modal -->
@@ -68,8 +88,8 @@
                 @foreach ($relationModules as $relationModule)
                     <div class="col-md-4">
                         <div class="card module-card h-100">
-                            <img src="{{ asset($relationModule->image) }}" class="card-img-top" alt="{{ $relationModule->name }}"
-                                style="height: 250px; object-fit: fill;">
+                            <img src="{{ asset($relationModule->image) }}" class="card-img-top"
+                                alt="{{ $relationModule->name }}" style="height: 250px; object-fit: fill;">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $relationModule->name }}</h5>
                                 <p class="card-text">{{ $relationModule->short_description }}</p>
