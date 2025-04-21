@@ -19,6 +19,27 @@
                 <div class="row">
                     <!-- Contact Information -->
                     <div class="col-md-6">
+                        <div id="map" style="height: 400px; width: 100%;"></div>
+                        <script>
+                            function initMap() {
+                                const location = {
+                                    lat: 9.0674,
+                                    lng: 6.5698
+                                }; // Replace with your desired coordinates
+                                const map = new google.maps.Map(document.getElementById("map"), {
+                                    zoom: 15,
+                                    center: location,
+                                });
+                                const marker = new google.maps.Marker({
+                                    position: location,
+                                    map: map,
+                                });
+                            }
+                        </script>
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key={{env('MAP_KEY')}}&callback=initMap">
+                        </script>
+                    </div>
+                    <div class="col-md-6">
                         <h3>Address</h3>
                        
                         <p> <i class="fas fa-map-marker-alt text-success"></i>Minna Road, Lapai 911101, Nigeria</p>
@@ -34,7 +55,7 @@
                     </div>
 
                     <!-- Contact Form -->
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <h3>Contact Form</h3>
                         <form>
                             <div id="div-contact-modal-error" class="alert alert-danger" role="alert"></div>

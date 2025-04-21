@@ -33,7 +33,9 @@
                         <a href="https://www.instagram.com" target="_blank" class="text-white">
                             <i class="fab fa-instagram fa-2x"></i>
                         </a>
-                        <p> <a class="nav-link" href="mailto:info@example.com">info@ibbu.edu.ng</a></p>
+                        <a href="mailto:info@ibbu.edu.ng" class="text-white">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -54,18 +56,8 @@
             @endphp
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#hero">Home</a></li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="ModulesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                       ICDL Modules
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="ModulesDropdown">
-                        @foreach ($modules as $module)
-                          <li><a class="dropdown-item" href="{{ route('module.details', $module->id) }}">{{ $module->name }}</a></li>
-                        @endforeach
-                      </ul>
-                    </li>
-                 
+                    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+                                 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="About" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -80,6 +72,16 @@
                                     Structure</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ModulesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         ICDL Modules
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="ModulesDropdown">
+                          @foreach ($modules as $module)
+                            <li><a class="dropdown-item" href="{{ route('module.details', $module->id) }}">{{ $module->name }}</a></li>
+                          @endforeach
+                        </ul>
+                      </li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('show.contact-us') }}">Contact Us</a></li>
                 </ul>
             </div>
