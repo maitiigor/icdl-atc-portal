@@ -55,7 +55,7 @@
                     </div>
 
                     <!-- Contact Form -->
-                    <div class="col-md-12">
+                    <div class="col-md-12 mt-3">
                         <h3>Contact Form</h3>
                         <form>
                             <div id="div-contact-modal-error" class="alert alert-danger" role="alert"></div>
