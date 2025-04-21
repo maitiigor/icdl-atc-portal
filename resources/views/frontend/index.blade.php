@@ -6,7 +6,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active" style="background-image: url('assets/images/LE_1.jpg');">
                 <div class="hero-overlay"></div>
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption pt-3 d-md-block">
                     <h1 class="display-3">Welcome to the ICDL Training Center</h1>
                     <p class="lead">Empowering you with certified digital skills at IBBU University. Our programs are
                         designed to provide you with the knowledge and practical expertise needed to excel in today's
@@ -18,7 +18,7 @@
             </div>
             <div class="carousel-item" style="background-image: url('assets/images/LE_2.jpg');">
                 <div class="hero-overlay"></div>
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption pt-3 d-md-block">
                     <h1 class="display-3">Advance Your Career</h1>
                     <p class="lead">Join our comprehensive training programs and achieve ICDL certification. Gain the
                         skills and confidence needed to thrive in the digital age, with courses tailored to meet the demands
@@ -28,7 +28,7 @@
             </div>
             <div class="carousel-item" style="background-image: url('assets/images/LE_3.jpg');">
                 <div class="hero-overlay"></div>
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption pt-3 d-md-block">
                     <h1 class="display-3">Learn at Your Own Pace</h1>
                     <p class="lead">Our flexible learning options allow you to balance your studies with your personal and
                         professional life. Start your journey to digital proficiency today.</p>
@@ -376,8 +376,8 @@
                     <script>
                         function initMap() {
                             const location = {
-                                lat: 9.615,
-                                lng: 6.556
+                                lat: 9.0674,
+                                lng: 6.5698
                             }; // Replace with your desired coordinates
                             const map = new google.maps.Map(document.getElementById("map"), {
                                 zoom: 15,
@@ -389,7 +389,7 @@
                             });
                         }
                     </script>
-                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_demoKeyForTesting&callback=initMap">
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{env('MAP_KEY')}}&callback=initMap">
                     </script>
                 </div>
                 <div class="col-md-8">

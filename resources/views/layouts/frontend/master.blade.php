@@ -18,10 +18,10 @@
     <section class="social-contact-us bg-black text-white py-3">
         <div class="container-fluid text-center">
             <div class="d-flex justify-content-end align-items-center px-4">
-              <div>
+              {{-- <div>
                 <p class="mb-0 me-3">Connect with us on Social Media</p>
              
-              </div>
+              </div> --}}
                 <div>
                     <div class="d-flex justify-content-center align-items-center gap-3">
                         <a href="https://www.facebook.com" target="_blank" class="text-white">
@@ -95,15 +95,18 @@
             <div class="partners mt-3">
                 <p>Our Sponsors:</p>
                 <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a href="https://www.tetfund.gov.ng" class="nav-link" target="_blank">TETFund</a>
+                    <li class="list-inline-item" style="border-right: 1px solid #ccc; padding-right: 10px;">
+                  
+                       <a href="https://www.tetfund.gov.ng" class="nav-link" target="_blank">  <img src="{{asset('images/tetfund_logo.jpg')}}" alt=""> &nbsp; TETFund</a> 
                     </li>
-                    <li class="list-inline-item">
-                        <a href="https://icdl.org" class="nav-link" target="_blank">ICDL</a>
+                    <li class="list-inline-item"  style="border-right: 1px solid #ccc; padding-right: 10px;">
+                       <a href="https://icdl.org" class="nav-link" target="_blank">    <img src="{{asset('images/icdl_logo.png')}}"  style="width: 50px; height: auto;" alt="">  &nbsp;  ICDL</a>
                     </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.nuc.edu.ng" class="nav-link" target="_blank">NUC</a>
+                 
+                    <li class="list-inline-item"  style="border-right: 1px solid #ccc; padding-right: 10px;">
+                        <a href="https://www.nuc.edu.ng" class="nav-link" target="_blank">  <img src="{{asset('images/nuc-header-new.png')}}" style="width: 50px; height: auto;"  alt="Nuc - Logo">  &nbsp;  NUC</a> 
                     </li>
+             
                 </ul>
             </div>
         </div>
